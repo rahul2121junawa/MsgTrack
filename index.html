@@ -5,99 +5,204 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#071b14">
+<meta name="description" content="MsgTrack - Your personal message organizer and media vault for Android.">
 <title>MsgTrack - Your Messages, Organized</title>
+
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,sans-serif;background:#071b14;color:#f3fff8;line-height:1.6}
-header{padding:22px 8%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #244536}
+html{scroll-behavior:smooth}
+body{
+ font-family:Arial,sans-serif;
+ background:#071b14;
+ color:#f3fff8;
+ line-height:1.6
+}
+header{
+ padding:22px 8%;
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ border-bottom:1px solid #244536
+}
 .logo{font-size:25px;font-weight:bold;color:#70e6a5}
 .logo span{color:white}
-nav a{color:#d5e8dc;text-decoration:none;margin-left:22px;font-size:14px}
-.hero{text-align:center;padding:90px 20px 75px;background:radial-gradient(circle at top,#174b34,#071b14 65%)}
-.tag{display:inline-block;border:1px solid #39845c;border-radius:30px;padding:7px 16px;color:#8af0b5;font-size:13px}
-h1{font-size:clamp(38px,7vw,65px);line-height:1.1;margin:25px 0}
+nav a{
+ color:#d5e8dc;
+ text-decoration:none;
+ margin-left:22px;
+ font-size:14px
+}
+.hero{
+ text-align:center;
+ padding:90px 20px 75px;
+ background:radial-gradient(circle at top,#174b34,#071b14 65%)
+}
+.tag{
+ display:inline-block;
+ border:1px solid #39845c;
+ border-radius:30px;
+ padding:7px 16px;
+ color:#8af0b5;
+ font-size:13px
+}
+h1{
+ font-size:clamp(38px,7vw,65px);
+ line-height:1.1;
+ margin:25px 0
+}
 h1 span{color:#70e6a5}
-.hero p{max-width:600px;margin:auto;color:#c0d4c8;font-size:17px}
-.btn{display:inline-block;margin-top:30px;padding:14px 28px;border-radius:10px;background:#70e6a5;color:#071b14;text-decoration:none;font-weight:bold}
+.hero p{
+ max-width:600px;
+ margin:auto;
+ color:#c0d4c8;
+ font-size:17px
+}
+.btn{
+ display:inline-block;
+ margin-top:30px;
+ padding:14px 28px;
+ border-radius:10px;
+ background:#70e6a5;
+ color:#071b14;
+ text-decoration:none;
+ font-weight:bold;
+ transition:.2s
+}
+.btn:hover{background:#9af5bd;transform:translateY(-2px)}
 section{padding:65px 8%;text-align:center}
 h2{font-size:32px;margin-bottom:12px}
 .sub{color:#a9c1b2;margin-bottom:35px}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;text-align:left}
-.card{background:#102b20;border:1px solid #244936;border-radius:16px;padding:25px}
+.cards{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+ gap:18px;
+ text-align:left
+}
+.card{
+ background:#102b20;
+ border:1px solid #244936;
+ border-radius:16px;
+ padding:25px
+}
 .card .icon{font-size:30px}
 .card h3{margin:13px 0;color:#8af0b5}
 .card p{color:#b9cdbf;font-size:14px}
 .about{background:#0d251a}
-.download{background:linear-gradient(135deg,#123c29,#0b2118);border-radius:20px;padding:40px 20px}
-footer{text-align:center;padding:28px;color:#91aa9b;border-top:1px solid #244536;font-size:13px}
-@media(max-width:600px){nav a{margin-left:10px;font-size:12px}header{padding:18px 5%}section{padding:50px 6%}}
+.download{
+ background:linear-gradient(135deg,#123c29,#0b2118);
+ border:1px solid #28533d;
+ border-radius:20px;
+ padding:40px 20px
+}
+.note{
+ color:#a9c1b2;
+ font-size:13px;
+ margin-top:18px
+}
+footer{
+ text-align:center;
+ padding:28px;
+ color:#91aa9b;
+ border-top:1px solid #244536;
+ font-size:13px
+}
+@media(max-width:600px){
+ nav a{margin-left:10px;font-size:12px}
+ header{padding:18px 5%}
+ section{padding:50px 6%}
+}
 </style>
 </head>
+
 <body>
+
 <header>
-<div class="logo">Msg<span>Track</span></div>
-<nav>
-<a href="#features">Features</a>
-<a href="#about">About</a>
-<a href="#download">Download</a>
-</nav>
+ <div class="logo">Msg<span>Track</span></div>
+ <nav>
+  <a href="#features">Features</a>
+  <a href="#about">About</a>
+  <a href="#download">Download</a>
+ </nav>
 </header>
 
 <div class="hero">
-<div class="tag">YOUR PERSONAL MESSAGE ORGANIZER</div>
-<h1>Keep Your Messages<br><span>Within Reach.</span></h1>
-<p>MsgTrack helps you organize notification history and keep selected media together in one simple place.</p>
-<a class="btn" href="#download">Explore MsgTrack ↓</a>
+ <div class="tag">YOUR PERSONAL MESSAGE ORGANIZER</div>
+ <h1>Keep Your Messages<br><span>Within Reach.</span></h1>
+ <p>
+  MsgTrack helps you organize notification history
+  and keep selected media together in one simple place.
+ </p>
+ <a class="btn" href="#download">Explore MsgTrack ↓</a>
 </div>
 
 <section id="features">
-<h2>What MsgTrack Offers</h2>
-<p class="sub">Simple tools, designed for everyday use.</p>
-<div class="cards">
-<div class="card">
-<div class="icon">💬</div>
-<h3>Message History</h3>
-<p>View supported notifications saved in your app's local history.</p>
-</div>
-<div class="card">
-<div class="icon">🔎</div>
-<h3>Quick Search</h3>
-<p>Find saved notification entries with convenient search tools.</p>
-</div>
-<div class="card">
-<div class="icon">🖼️</div>
-<h3>Media Vault</h3>
-<p>Keep selected photos and media files together in one place.</p>
-</div>
-<div class="card">
-<div class="icon">🔐</div>
-<h3>Privacy Focus</h3>
-<p>Your saved app data is stored locally on your device.</p>
-</div>
-</div>
+ <h2>What MsgTrack Offers</h2>
+ <p class="sub">Simple tools, designed for everyday use.</p>
+
+ <div class="cards">
+
+  <div class="card">
+   <div class="icon">💬</div>
+   <h3>Message History</h3>
+   <p>View supported notifications saved in your app's local history.</p>
+  </div>
+
+  <div class="card">
+   <div class="icon">🔎</div>
+   <h3>Quick Search</h3>
+   <p>Find saved notification entries with convenient search tools.</p>
+  </div>
+
+  <div class="card">
+   <div class="icon">🖼️</div>
+   <h3>Media Vault</h3>
+   <p>Keep selected photos and media files together in one place.</p>
+  </div>
+
+  <div class="card">
+   <div class="icon">🔐</div>
+   <h3>Privacy Focus</h3>
+   <p>Your saved app data is stored locally on your device.</p>
+  </div>
+
+ </div>
 </section>
 
 <section class="about" id="about">
-<h2>About MsgTrack</h2>
-<p class="sub">A simple Android project built with a focus on organization and convenience.</p>
-<p style="max-width:650px;margin:auto;color:#c0d4c8">
-MsgTrack uses Android notification access to save supported notification details.
-Only notifications received while the required access is enabled can be recorded.
-Media can also be added manually by the user.
-</p>
+ <h2>About MsgTrack</h2>
+ <p class="sub">A simple Android project built with a focus on organization and convenience.</p>
+
+ <p style="max-width:650px;margin:auto;color:#c0d4c8">
+  MsgTrack uses Android notification access to save supported
+  notification details. Only notifications received while the
+  required access is enabled can be recorded. Media can also
+  be added manually by the user.
+ </p>
 </section>
 
 <section id="download">
-<div class="download">
-<h2>Get MsgTrack</h2>
-<p class="sub">The Android APK will be available here soon.</p>
-<a class="btn" href="#" onclick="alert('The APK download will be available soon.');return false;">APK Coming Soon</a>
-</div>
+ <div class="download">
+  <h2>Get MsgTrack</h2>
+  <p class="sub">Download the Android app.</p>
+
+  <a class="btn"
+     href="https://drive.google.com/uc?export=download&id=1LWTSLxQiZ_92m6rksrD44l6esAGhPnhM"
+     target="_blank"
+     rel="noopener">
+     ⬇ Download APK
+  </a>
+
+  <p class="note">
+   Android APK • 11.84 MB<br>
+   Install only if you trust this app and its permissions.
+  </p>
+ </div>
 </section>
 
 <footer>
-<p>© 2026 MsgTrack. All rights reserved.</p>
-<p>Made with care by the MsgTrack team.</p>
+ <p>© 2026 MsgTrack. All rights reserved.</p>
+ <p>Made with care by the MsgTrack team.</p>
 </footer>
+
 </body>
 </html>
