@@ -4,112 +4,269 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#071b14">
-<meta name="description" content="MsgTrack - Organize your Android notification history and selected media.">
-<title>MsgTrack - Your Messages, Organized</title>
+<meta name="theme-color" content="#080611">
+<meta name="description" content="ProPlayer🫂❤️ - A unique digital experience by ProPlayer.">
+<title>ProPlayer🫂❤️ | Official Website</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
+*{
+ margin:0;
+ padding:0;
+ box-sizing:border-box;
+}
 html{scroll-behavior:smooth}
 body{
  font-family:Arial,sans-serif;
- background:#071b14;
- color:#f3fff8;
- line-height:1.6
+ background:#080611;
+ color:#fff;
+ overflow-x:hidden;
 }
+:root{
+ --pink:#ff2d75;
+ --purple:#9b5cff;
+ --dark:#080611;
+ --muted:#b9aecb;
+}
+a{text-decoration:none;color:inherit}
 header{
- padding:22px 8%;
+ position:sticky;
+ top:0;
+ z-index:100;
  display:flex;
  justify-content:space-between;
  align-items:center;
- border-bottom:1px solid #244536
+ padding:18px 7%;
+ background:rgba(8,6,17,.88);
+ backdrop-filter:blur(15px);
+ border-bottom:1px solid #30203d;
 }
-.logo{font-size:25px;font-weight:bold;color:#70e6a5}
-.logo span{color:white}
+.brand{
+ font-size:23px;
+ font-weight:900;
+ background:linear-gradient(90deg,#ff2d75,#bd7bff);
+ -webkit-background-clip:text;
+ color:transparent;
+}
+nav{
+ display:flex;
+ gap:22px;
+}
 nav a{
- color:#d5e8dc;
- text-decoration:none;
- margin-left:22px;
- font-size:14px
+ font-size:13px;
+ color:#d8cde5;
+ transition:.3s;
 }
+nav a:hover{color:#ff5c99}
 .hero{
+ min-height:650px;
+ padding:110px 20px 90px;
  text-align:center;
- padding:90px 20px 75px;
- background:radial-gradient(circle at top,#174b34,#071b14 65%)
+ display:flex;
+ flex-direction:column;
+ justify-content:center;
+ align-items:center;
+ position:relative;
+ background:
+ radial-gradient(ellipse at 50% 15%,#4b1757 0%,transparent 55%),
+ radial-gradient(ellipse at 10% 90%,#35103c 0%,transparent 40%),
+ #080611;
 }
-.tag{
+.glow{
+ position:absolute;
+ width:260px;
+ height:260px;
+ border-radius:50%;
+ background:#ff2d75;
+ filter:blur(130px);
+ opacity:.20;
+}
+.hero-content{position:relative;z-index:1}
+.pill{
  display:inline-block;
- border:1px solid #39845c;
+ padding:9px 18px;
+ border:1px solid #77365f;
  border-radius:30px;
- padding:7px 16px;
- color:#8af0b5;
- font-size:13px
+ color:#ff8bb6;
+ font-size:12px;
+ letter-spacing:2px;
+ background:#1d1023;
 }
-h1{
- font-size:clamp(38px,7vw,65px);
+.hero h1{
+ font-size:clamp(42px,9vw,85px);
+ margin:30px 0 15px;
  line-height:1.1;
- margin:25px 0
+ font-weight:900;
 }
-h1 span{color:#70e6a5}
+.hero h1 span{
+ background:linear-gradient(90deg,#ff2d75,#c78aff);
+ -webkit-background-clip:text;
+ color:transparent;
+}
 .hero p{
  max-width:600px;
  margin:auto;
- color:#c0d4c8;
- font-size:17px
+ color:#c6b9d2;
+ font-size:16px;
+ line-height:1.8;
 }
 .btn{
  display:inline-block;
- margin-top:30px;
- padding:14px 28px;
- border-radius:10px;
- background:#70e6a5;
- color:#071b14;
- text-decoration:none;
+ margin:25px 8px 0;
+ padding:14px 25px;
+ border-radius:12px;
+ background:linear-gradient(100deg,#ff2d75,#9b5cff);
+ color:white;
  font-weight:bold;
- transition:.2s
+ font-size:14px;
+ box-shadow:0 8px 30px #ff2d7530;
+ transition:.3s;
 }
-.btn:hover{background:#9af5bd;transform:translateY(-2px)}
-section{padding:65px 8%;text-align:center}
-h2{font-size:32px;margin-bottom:12px}
-.sub{color:#a9c1b2;margin-bottom:35px}
+.btn:hover{
+ transform:translateY(-4px);
+ box-shadow:0 10px 35px #ff2d7560;
+}
+.btn-outline{
+ background:transparent;
+ border:1px solid #9b5cff;
+ box-shadow:none;
+}
+section{
+ padding:85px 8%;
+ text-align:center;
+}
+.section-label{
+ color:#ff75a6;
+ font-size:12px;
+ letter-spacing:3px;
+ font-weight:bold;
+}
+h2{
+ font-size:clamp(28px,5vw,42px);
+ margin:15px 0;
+}
+.subtitle{
+ color:var(--muted);
+ margin-bottom:40px;
+ line-height:1.7;
+}
 .cards{
  display:grid;
  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
- gap:18px;
- text-align:left
+ gap:20px;
+ text-align:left;
 }
 .card{
- background:#102b20;
- border:1px solid #244936;
- border-radius:16px;
- padding:25px
-}
-.card .icon{font-size:30px}
-.card h3{margin:13px 0;color:#8af0b5}
-.card p{color:#b9cdbf;font-size:14px}
-.about{background:#0d251a}
-.download{
- background:linear-gradient(135deg,#123c29,#0b2118);
- border:1px solid #28533d;
+ padding:27px;
+ border:1px solid #382447;
  border-radius:20px;
- padding:40px 20px
+ background:linear-gradient(145deg,#191024,#100b19);
+ transition:.3s;
 }
-.note{
- color:#a9c1b2;
- font-size:13px;
- margin-top:18px
+.card:hover{
+ transform:translateY(-7px);
+ border-color:#ff4f91;
+ box-shadow:0 10px 35px #ff2d7515;
+}
+.icon{
+ font-size:32px;
+ margin-bottom:15px;
+}
+.card h3{
+ color:#ff80ac;
+ margin-bottom:12px;
+}
+.card p{
+ font-size:14px;
+ line-height:1.7;
+ color:#bcb0ca;
+}
+.marquee{
+ overflow:hidden;
+ padding:20px 0;
+ background:#160d20;
+ border-top:1px solid #382447;
+ border-bottom:1px solid #382447;
+ white-space:nowrap;
+}
+.marquee span{
+ display:inline-block;
+ padding-left:100%;
+ font-size:19px;
+ font-weight:bold;
+ color:#ff75a6;
+ animation:move 18s linear infinite;
+}
+@keyframes move{
+ from{transform:translateX(0)}
+ to{transform:translateX(-100%)}
+}
+.about{
+ background:linear-gradient(180deg,#100b19,#170d22);
+}
+.about-box{
+ max-width:750px;
+ margin:auto;
+ padding:35px;
+ border:1px solid #49305d;
+ border-radius:22px;
+ background:#1a1025;
+ line-height:1.9;
+ color:#c8bbd5;
+}
+.download-box{
+ max-width:750px;
+ margin:auto;
+ padding:45px 25px;
+ border-radius:25px;
+ border:1px solid #6a315a;
+ background:
+ radial-gradient(circle at top,#47204c,transparent 65%),
+ #150c20;
+}
+.version{
+ display:inline-block;
+ padding:7px 14px;
+ border-radius:20px;
+ background:#32152f;
+ color:#ff90b8;
+ font-size:12px;
+ margin:12px 0;
+}
+.instagram{
+ background:linear-gradient(120deg,#25102b,#100b19);
+}
+.insta-box{
+ max-width:500px;
+ margin:auto;
+ padding:35px;
+ border:1px solid #733052;
+ border-radius:22px;
+ background:#190f20;
+}
+.insta-name{
+ font-size:22px;
+ font-weight:bold;
+ color:#ff82b0;
+ margin:15px 0;
 }
 footer{
+ padding:35px 15px;
  text-align:center;
- padding:28px;
- color:#91aa9b;
- border-top:1px solid #244536;
- font-size:13px
+ background:#06040b;
+ border-top:1px solid #30203d;
+ color:#a99bb9;
+ font-size:13px;
+ line-height:2;
 }
+footer strong{color:#ff78a8}
 @media(max-width:600px){
- nav a{margin-left:10px;font-size:12px}
- header{padding:18px 5%}
- section{padding:50px 6%}
+ header{padding:17px 5%}
+ .brand{font-size:18px}
+ nav{gap:10px}
+ nav a{font-size:11px}
+ .hero{min-height:570px}
+ section{padding:65px 6%}
+ .about-box{padding:24px}
 }
 </style>
 </head>
@@ -117,57 +274,66 @@ footer{
 <body>
 
 <header>
- <div class="logo">Msg<span>Track</span></div>
+ <div class="brand">ProPlayer🫂❤️</div>
  <nav>
+  <a href="#home">Home</a>
   <a href="#features">Features</a>
-  <a href="#about">About</a>
-  <a href="#download">Download</a>
+  <a href="#download">App</a>
+  <a href="#contact">Contact</a>
  </nav>
 </header>
 
-<div class="hero">
- <div class="tag">YOUR PERSONAL MESSAGE ORGANIZER</div>
- <h1>Keep Your Messages<br><span>Within Reach.</span></h1>
- <p>
-  MsgTrack helps you organize notification history
-  and keep selected media together in one simple place.
- </p>
- <a class="btn" href="#download">Explore MsgTrack ↓</a>
+<main>
+
+<div class="hero" id="home">
+ <div class="glow"></div>
+ <div class="hero-content">
+  <div class="pill">WELCOME TO PROPLAYER🫂❤️</div>
+  <h1>PROPLAYER<br><span>🫂❤️</span></h1>
+  <p>
+   Welcome to the official ProPlayer🫂❤️ digital space.
+   Explore our projects, discover useful features
+   and experience something different.
+  </p>
+  <a href="#download" class="btn">Explore MsgTrack ↓</a>
+  <a href="#contact" class="btn btn-outline">Connect With Me</a>
+ </div>
+</div>
+
+<div class="marquee">
+ <span>PROPLAYER🫂❤️ • PROPLAYER🫂❤️ • PROPLAYER🫂❤️ • PROPLAYER🫂❤️ • PROPLAYER🫂❤️ • </span>
 </div>
 
 <section id="features">
- <h2>What MsgTrack Offers</h2>
- <p class="sub">Simple tools, designed for everyday use.</p>
+ <div class="section-label">PROPLAYER🫂❤️ COLLECTION</div>
+ <h2>Our Digital Experience</h2>
+ <p class="subtitle">
+  ProPlayer🫂❤️ — Creativity, Technology and Innovation.
+ </p>
 
  <div class="cards">
   <div class="card">
    <div class="icon">💬</div>
-   <h3>Message History</h3>
-   <p>View supported notifications saved in your app's local history.</p>
+   <h3>MsgTrack</h3>
+   <p>Organize supported notification history in one convenient Android application.</p>
   </div>
 
   <div class="card">
    <div class="icon">🔎</div>
    <h3>Quick Search</h3>
-   <p>Find saved notification entries with convenient search tools.</p>
+   <p>Search saved notification entries with convenient filters.</p>
   </div>
 
   <div class="card">
-   <div class="icon">🖼️</div>
+   <div class="icon">🗂️</div>
    <h3>Media Vault</h3>
-   <p>Keep selected photos and media files together in one place.</p>
-  </div>
-
-  <div class="card">
-   <div class="icon">🔐</div>
-   <h3>Privacy Focus</h3>
-   <p>Your saved notification data is stored locally on your device.</p>
+   <p>Keep selected media files together in one place.</p>
   </div>
 
   <div class="card">
    <div class="icon">🗑️</div>
    <h3>Deleted Notification History</h3>
-   <p>View previously captured notifications that were later removed, where Android reports their removal.</p>
+   <p>View previously captured notifications reported as removed by Android.</p>
   </div>
 
   <div class="card">
@@ -175,48 +341,89 @@ footer{
    <h3>Backup & Restore</h3>
    <p>Export and import your saved notification history.</p>
   </div>
+
+  <div class="card">
+   <div class="icon">🔒</div>
+   <h3>Local Storage</h3>
+   <p>Saved notification history stays locally on your device.</p>
+  </div>
  </div>
 </section>
 
-<section class="about" id="about">
- <h2>About MsgTrack</h2>
- <p class="sub">A simple Android project built with a focus on organization and convenience.</p>
+<div class="marquee">
+ <span>PROPLAYER🫂❤️ • CREATE • BUILD • INNOVATE • PROPLAYER🫂❤️ • CREATE • BUILD • INNOVATE • </span>
+</div>
 
- <p style="max-width:650px;margin:auto;color:#c0d4c8">
+<section class="about">
+ <div class="section-label">ABOUT PROPLAYER🫂❤️</div>
+ <h2>One Name. One Identity.</h2>
+ <p class="subtitle">Welcome to the world of ProPlayer🫂❤️</p>
+ <div class="about-box">
+  <strong>ProPlayer🫂❤️</strong> is the identity behind this digital space.
+  Discover projects, explore technology and follow new creations.
+  <br>
+  <strong>Our featured project: MsgTrack</strong>
+  <br>
   MsgTrack uses Android notification access to save supported
   notifications from WhatsApp, Telegram and Instagram.
-  Only notifications received while the required access is enabled
-  can be recorded. Media can also be added manually by the user.
+  Only notifications received while access is enabled can be recorded.
   Notification removal does not confirm that a sender deleted a message.
-  Saved data is stored locally on your device.
- </p>
+  Media can be added manually by the user.
+ </div>
 </section>
 
 <section id="download">
- <div class="download">
-  <h2>Get MsgTrack</h2>
-  <p class="sub">Download the latest Android release.</p>
-
+ <div class="download-box">
+  <div class="section-label">PROPLAYER🫂❤️ PRESENTS</div>
+  <h2>Download MsgTrack</h2>
+  <p class="subtitle">
+   Your notification organizer for Android.
+  </p>
+  <div class="version">LATEST RELEASE • VERSION 2.3</div>
+  <br>
   <a class="btn"
      href="https://drive.google.com/uc?export=download&id=1sKNyXl17vt7Y2AFF7Jg2n0Wrbr17aYba"
      target="_blank"
      rel="noopener">
      ⬇ Download MsgTrack APK
   </a>
-
-  <p class="note">
-   Android APK • Version 2.3<br>
-   Requires Android notification access permission.<br>
-   Install only if you trust this app and its permissions.
+  <p class="subtitle" style="margin:22px 0 0;font-size:12px">
+   Android APK • Notification access required.
+   Review app permissions before installing.
   </p>
  </div>
 </section>
 
+<section class="instagram" id="contact">
+ <div class="section-label">CONNECT WITH PROPLAYER🫂❤️</div>
+ <h2>Let's Connect</h2>
+ <p class="subtitle">
+  Follow the official Instagram profile.
+ </p>
+
+ <div class="insta-box">
+  <div class="icon">📸</div>
+  <div class="insta-name">@rahul_junawa.0021</div>
+  <p style="color:#bcb0ca">
+   Instagram • ProPlayer🫂❤️
+  </p>
+  <a class="btn"
+     href="https://www.instagram.com/rahul_junawa.0021/"
+     target="_blank"
+     rel="noopener">
+     Visit Instagram ↗
+  </a>
+ </div>
+</section>
+
+</main>
+
 <footer>
- <p>© 2026 MsgTrack. All rights reserved.</p>
- <p>Made with care by the MsgTrack team.</p>
+ <strong>ProPlayer🫂❤️</strong>
+ <p>Official Digital Space</p>
+ <p>Made with care by ProPlayer🫂❤️</p>
+ <p>© 2026 ProPlayer🫂❤️. All rights reserved.</p>
 </footer>
 
 </body>
-   </html>
-   
+</html>
