@@ -4,426 +4,519 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#080611">
-<meta name="description" content="ProPlayer🫂❤️ - A unique digital experience by ProPlayer.">
-<title>ProPlayer🫂❤️ | Official Website</title>
+<meta name="theme-color" content="#050907">
+<title>Pro Player ❤️🫂 | Official Website</title>
 
 <style>
-*{
- margin:0;
- padding:0;
- box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-html{scroll-behavior:smooth}
-body{
- font-family:Arial,sans-serif;
- background:#080611;
- color:#fff;
- overflow-x:hidden;
+
+:root {
+    --green: #00e69a;
+    --white: #f5fff9;
+    --muted: #a0b5a9;
+    --bg: #050907;
 }
-:root{
- --pink:#ff2d75;
- --purple:#9b5cff;
- --dark:#080611;
- --muted:#b9aecb;
+
+body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Noto Color Emoji", sans-serif;
+    overflow-x: hidden;
 }
-a{text-decoration:none;color:inherit}
-header{
- position:sticky;
- top:0;
- z-index:100;
- display:flex;
- justify-content:space-between;
- align-items:center;
- padding:18px 7%;
- background:rgba(8,6,17,.88);
- backdrop-filter:blur(15px);
- border-bottom:1px solid #30203d;
+
+/* FULL SCREEN BACKGROUND NAME */
+
+.background-wallpaper {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    overflow: hidden;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse at 50% 40%,
+      rgba(0, 230, 154, 0.13), transparent 65%),
+      #050907;
 }
-.brand{
- font-size:23px;
- font-weight:900;
- background:linear-gradient(90deg,#ff2d75,#bd7bff);
- -webkit-background-clip:text;
- color:transparent;
+
+.big-name {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-12deg);
+    white-space: nowrap;
+    font-size: clamp(65px, 15vw, 190px);
+    font-weight: 1000;
+    letter-spacing: -5px;
+    color: rgba(0, 230, 154, 0.055);
+    text-shadow: 0 0 55px rgba(0, 230, 154, 0.08);
 }
-nav{
- display:flex;
- gap:22px;
+
+.small-names {
+    position: absolute;
+    inset: -20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    transform: rotate(-18deg);
+    opacity: 0.11;
+    gap: 55px;
 }
-nav a{
- font-size:13px;
- color:#d8cde5;
- transition:.3s;
+
+.small-names span {
+    white-space: nowrap;
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: 5px;
+    color: #dffff0;
+    animation: glow 4s ease-in-out infinite alternate;
 }
-nav a:hover{color:#ff5c99}
-.hero{
- min-height:650px;
- padding:110px 20px 90px;
- text-align:center;
- display:flex;
- flex-direction:column;
- justify-content:center;
- align-items:center;
- position:relative;
- background:
- radial-gradient(ellipse at 50% 15%,#4b1757 0%,transparent 55%),
- radial-gradient(ellipse at 10% 90%,#35103c 0%,transparent 40%),
- #080611;
+
+@keyframes glow {
+    from { opacity: .25; }
+    to { opacity: .9; }
 }
-.glow{
- position:absolute;
- width:260px;
- height:260px;
- border-radius:50%;
- background:#ff2d75;
- filter:blur(130px);
- opacity:.20;
+
+.background-wallpaper::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg,
+      rgba(5,9,7,.25),
+      rgba(5,9,7,.65));
 }
-.hero-content{position:relative;z-index:1}
-.pill{
- display:inline-block;
- padding:9px 18px;
- border:1px solid #77365f;
- border-radius:30px;
- color:#ff8bb6;
- font-size:12px;
- letter-spacing:2px;
- background:#1d1023;
+
+/* HEADER */
+
+header {
+    position: relative;
+    z-index: 2;
+    padding: 22px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(0,230,154,.15);
+    background: rgba(5,9,7,.55);
+    backdrop-filter: blur(16px);
 }
-.hero h1{
- font-size:clamp(42px,9vw,85px);
- margin:30px 0 15px;
- line-height:1.1;
- font-weight:900;
+
+.logo {
+    color: var(--white);
+    font-size: 23px;
+    font-weight: 950;
 }
-.hero h1 span{
- background:linear-gradient(90deg,#ff2d75,#c78aff);
- -webkit-background-clip:text;
- color:transparent;
+
+.logo span {
+    color: var(--green);
 }
-.hero p{
- max-width:600px;
- margin:auto;
- color:#c6b9d2;
- font-size:16px;
- line-height:1.8;
+
+nav a {
+    color: var(--muted);
+    text-decoration: none;
+    margin-left: 22px;
+    font-size: 13px;
+    font-weight: 700;
 }
-.btn{
- display:inline-block;
- margin:25px 8px 0;
- padding:14px 25px;
- border-radius:12px;
- background:linear-gradient(100deg,#ff2d75,#9b5cff);
- color:white;
- font-weight:bold;
- font-size:14px;
- box-shadow:0 8px 30px #ff2d7530;
- transition:.3s;
+
+nav a:hover {
+    color: var(--green);
 }
-.btn:hover{
- transform:translateY(-4px);
- box-shadow:0 10px 35px #ff2d7560;
+
+/* HERO */
+
+.hero {
+    min-height: 78vh;
+    padding: 100px 20px 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
 }
-.btn-outline{
- background:transparent;
- border:1px solid #9b5cff;
- box-shadow:none;
+
+.tag {
+    padding: 9px 18px;
+    border: 1px solid rgba(0,230,154,.35);
+    border-radius: 50px;
+    color: var(--green);
+    background: rgba(0,230,154,.07);
+    font-size: 12px;
+    letter-spacing: 3px;
+    margin-bottom: 27px;
 }
-section{
- padding:85px 8%;
- text-align:center;
+
+.hero h1 {
+    font-size: clamp(42px, 9vw, 90px);
+    font-weight: 1000;
+    line-height: 1.1;
+    letter-spacing: -3px;
 }
-.section-label{
- color:#ff75a6;
- font-size:12px;
- letter-spacing:3px;
- font-weight:bold;
+
+.hero h1 span {
+    color: var(--green);
+    text-shadow: 0 0 35px rgba(0,230,154,.35);
 }
-h2{
- font-size:clamp(28px,5vw,42px);
- margin:15px 0;
+
+.hero p {
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.8;
+    margin-top: 22px;
+    max-width: 550px;
 }
-.subtitle{
- color:var(--muted);
- margin-bottom:40px;
- line-height:1.7;
+
+.special {
+    margin-top: 28px;
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: 4px;
+    color: #fff;
+    text-shadow: 0 0 25px rgba(0,230,154,.35);
 }
-.cards{
- display:grid;
- grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
- gap:20px;
- text-align:left;
+
+.special span {
+    color: var(--green);
 }
-.card{
- padding:27px;
- border:1px solid #382447;
- border-radius:20px;
- background:linear-gradient(145deg,#191024,#100b19);
- transition:.3s;
+
+.hero-buttons {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 35px;
 }
-.card:hover{
- transform:translateY(-7px);
- border-color:#ff4f91;
- box-shadow:0 10px 35px #ff2d7515;
+
+.btn {
+    text-decoration: none;
+    padding: 15px 27px;
+    border-radius: 12px;
+    font-weight: 850;
+    transition: .3s;
 }
-.icon{
- font-size:32px;
- margin-bottom:15px;
+
+.primary {
+    background: var(--green);
+    color: #03140d;
+    box-shadow: 0 0 25px rgba(0,230,154,.2);
 }
-.card h3{
- color:#ff80ac;
- margin-bottom:12px;
+
+.secondary {
+    border: 1px solid rgba(255,255,255,.2);
+    color: white;
+    background: rgba(255,255,255,.04);
 }
-.card p{
- font-size:14px;
- line-height:1.7;
- color:#bcb0ca;
+
+.btn:hover {
+    transform: translateY(-5px);
 }
-.marquee{
- overflow:hidden;
- padding:20px 0;
- background:#160d20;
- border-top:1px solid #382447;
- border-bottom:1px solid #382447;
- white-space:nowrap;
+
+/* SECTIONS */
+
+section {
+    padding: 75px 7%;
+    position: relative;
 }
-.marquee span{
- display:inline-block;
- padding-left:100%;
- font-size:19px;
- font-weight:bold;
- color:#ff75a6;
- animation:move 18s linear infinite;
+
+.section-title {
+    text-align: center;
+    font-size: 35px;
+    font-weight: 950;
+    margin-bottom: 12px;
 }
-@keyframes move{
- from{transform:translateX(0)}
- to{transform:translateX(-100%)}
+
+.section-title span {
+    color: var(--green);
 }
-.about{
- background:linear-gradient(180deg,#100b19,#170d22);
+
+.section-subtitle {
+    text-align: center;
+    color: var(--muted);
+    margin-bottom: 38px;
+    font-size: 14px;
 }
-.about-box{
- max-width:750px;
- margin:auto;
- padding:35px;
- border:1px solid #49305d;
- border-radius:22px;
- background:#1a1025;
- line-height:1.9;
- color:#c8bbd5;
+
+.card {
+    background: rgba(12,24,18,.75);
+    border: 1px solid rgba(0,230,154,.18);
+    border-radius: 22px;
+    padding: 30px;
+    backdrop-filter: blur(16px);
+    box-shadow: 0 15px 55px rgba(0,0,0,.25);
+    transition: .3s;
 }
-.download-box{
- max-width:750px;
- margin:auto;
- padding:45px 25px;
- border-radius:25px;
- border:1px solid #6a315a;
- background:
- radial-gradient(circle at top,#47204c,transparent 65%),
- #150c20;
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(0,230,154,.5);
 }
-.version{
- display:inline-block;
- padding:7px 14px;
- border-radius:20px;
- background:#32152f;
- color:#ff90b8;
- font-size:12px;
- margin:12px 0;
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(210px,1fr));
+    gap: 18px;
 }
-.instagram{
- background:linear-gradient(120deg,#25102b,#100b19);
+
+.feature-icon {
+    font-size: 30px;
+    margin-bottom: 17px;
 }
-.insta-box{
- max-width:500px;
- margin:auto;
- padding:35px;
- border:1px solid #733052;
- border-radius:22px;
- background:#190f20;
+
+.card h3 {
+    font-size: 19px;
+    margin-bottom: 10px;
 }
-.insta-name{
- font-size:22px;
- font-weight:bold;
- color:#ff82b0;
- margin:15px 0;
+
+.card p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.7;
 }
-footer{
- padding:35px 15px;
- text-align:center;
- background:#06040b;
- border-top:1px solid #30203d;
- color:#a99bb9;
- font-size:13px;
- line-height:2;
+
+/* APP */
+
+.app-card {
+    max-width: 650px;
+    margin: auto;
+    text-align: center;
 }
-footer strong{color:#ff78a8}
-@media(max-width:600px){
- header{padding:17px 5%}
- .brand{font-size:18px}
- nav{gap:10px}
- nav a{font-size:11px}
- .hero{min-height:570px}
- section{padding:65px 6%}
- .about-box{padding:24px}
+
+.app-logo {
+    width: 85px;
+    height: 85px;
+    object-fit: contain;
+    border-radius: 22px;
+    margin-bottom: 20px;
+    background: rgba(0,230,154,.08);
+}
+
+.app-card h3 {
+    font-size: 32px;
+    color: var(--green);
+}
+
+.app-card .btn {
+    display: inline-block;
+    margin-top: 25px;
+}
+
+/* ABOUT */
+
+.about {
+    max-width: 750px;
+    margin: auto;
+    text-align: center;
+}
+
+.about p {
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 2;
+}
+
+/* FOOTER */
+
+footer {
+    padding: 35px 15px;
+    text-align: center;
+    background: rgba(0,0,0,.4);
+    border-top: 1px solid rgba(0,230,154,.15);
+}
+
+footer h2 {
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+footer p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 2;
+}
+
+footer a {
+    color: var(--green);
+    text-decoration: none;
+}
+
+.footer-mark {
+    margin-top: 16px;
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+@media(max-width:600px) {
+    header {
+        padding: 18px 5%;
+    }
+
+    nav a {
+        margin-left: 9px;
+        font-size: 11px;
+    }
+
+    .hero {
+        min-height: 75vh;
+        padding-top: 80px;
+    }
+
+    section {
+        padding: 60px 5%;
+    }
+
+    .big-name {
+        font-size: 70px;
+    }
 }
 </style>
 </head>
 
 <body>
 
+<div class="background-wallpaper">
+    <div class="big-name">pro player ❤️🫂</div>
+
+    <div class="small-names">
+        <span>pro player ❤️🫂 · 1215🧿🤍 · pro player ❤️🫂</span>
+        <span>1215🧿🤍 · pro player ❤️🫂 · 1215🧿🤍</span>
+        <span>pro player ❤️🫂 · pro player ❤️🫂</span>
+        <span>1215🧿🤍 · pro player ❤️🫂 · 1215🧿🤍</span>
+        <span>pro player ❤️🫂 · 1215🧿🤍 · pro player ❤️🫂</span>
+        <span>1215🧿🤍 · pro player ❤️🫂</span>
+    </div>
+</div>
+
 <header>
- <div class="brand">ProPlayer🫂❤️</div>
- <nav>
-  <a href="#home">Home</a>
-  <a href="#features">Features</a>
-  <a href="#download">App</a>
-  <a href="#contact">Contact</a>
- </nav>
+    <div class="logo">Pro Player <span>❤️🫂</span></div>
+    <nav>
+        <a href="#home">HOME</a>
+        <a href="#apps">APPS</a>
+        <a href="#about">ABOUT</a>
+    </nav>
 </header>
 
 <main>
 
 <div class="hero" id="home">
- <div class="glow"></div>
- <div class="hero-content">
-  <div class="pill">WELCOME TO PROPLAYER🫂❤️</div>
-  <h1>PROPLAYER<br><span>🫂❤️</span></h1>
-  <p>
-   Welcome to the official ProPlayer🫂❤️ digital space.
-   Explore our projects, discover useful features
-   and experience something different.
-  </p>
-  <a href="#download" class="btn">Explore MsgTrack ↓</a>
-  <a href="#contact" class="btn btn-outline">Connect With Me</a>
- </div>
+    <div class="tag">OFFICIAL DEVELOPER WEBSITE</div>
+
+    <h1>
+        PRO PLAYER<br>
+        <span>❤️🫂</span>
+    </h1>
+
+    <p>
+        Turning ideas into reality.
+        Building apps, exploring technology
+        and creating something different.
+    </p>
+
+    <div class="special">
+        1215 <span>🧿🤍</span>
+    </div>
+
+    <div class="hero-buttons">
+        <a href="#apps" class="btn primary">EXPLORE APPS ↗</a>
+        <a href="https://instagram.com/rahul_junawa.0021"
+           target="_blank" rel="noopener"
+           class="btn secondary">INSTAGRAM ↗</a>
+    </div>
 </div>
 
-<div class="marquee">
- <span>PROPLAYER🫂❤️ • PROPLAYER🫂❤️ • PROPLAYER🫂❤️ • PROPLAYER🫂❤️ • PROPLAYER🫂❤️ • </span>
-</div>
+<section id="apps">
+    <h2 class="section-title">MY <span>PROJECTS</span></h2>
+    <p class="section-subtitle">
+        Ideas are just the beginning.
+    </p>
 
-<section id="features">
- <div class="section-label">PROPLAYER🫂❤️ COLLECTION</div>
- <h2>Our Digital Experience</h2>
- <p class="subtitle">
-  ProPlayer🫂❤️ — Creativity, Technology and Innovation.
- </p>
+    <div class="card app-card">
+        <img class="app-logo"
+             src="msgtrack_logo.png"
+             alt="MsgTrack logo"
+             onerror="this.style.display='none'">
 
- <div class="cards">
-  <div class="card">
-   <div class="icon">💬</div>
-   <h3>MsgTrack</h3>
-   <p>Organize supported notification history in one convenient Android application.</p>
-  </div>
+        <h3>MsgTrack</h3>
+        <p>
+            A notification history companion
+            designed to help users manage their
+            supported app notifications.
+        </p>
 
-  <div class="card">
-   <div class="icon">🔎</div>
-   <h3>Quick Search</h3>
-   <p>Search saved notification entries with convenient filters.</p>
-  </div>
+        <a class="btn primary"
+           href="https://drive.google.com/uc?export=download&id=1sKNyXl17vt7Y2AFF7Jg2n0Wrbr17aYba"
+           target="_blank" rel="noopener">
+           DOWNLOAD MSGTRACK ↓
+        </a>
 
-  <div class="card">
-   <div class="icon">🗂️</div>
-   <h3>Media Vault</h3>
-   <p>Keep selected media files together in one place.</p>
-  </div>
-
-  <div class="card">
-   <div class="icon">🗑️</div>
-   <h3>Deleted Notification History</h3>
-   <p>View previously captured notifications reported as removed by Android.</p>
-  </div>
-
-  <div class="card">
-   <div class="icon">📦</div>
-   <h3>Backup & Restore</h3>
-   <p>Export and import your saved notification history.</p>
-  </div>
-
-  <div class="card">
-   <div class="icon">🔒</div>
-   <h3>Local Storage</h3>
-   <p>Saved notification history stays locally on your device.</p>
-  </div>
- </div>
+        <p style="margin-top:18px;font-size:12px">
+            Install only after reviewing the app's permissions
+            and Android security warnings.
+        </p>
+    </div>
 </section>
 
-<div class="marquee">
- <span>PROPLAYER🫂❤️ • CREATE • BUILD • INNOVATE • PROPLAYER🫂❤️ • CREATE • BUILD • INNOVATE • </span>
-</div>
+<section>
+    <h2 class="section-title">WHAT I <span>BUILD</span></h2>
+    <p class="section-subtitle">Learning. Creating. Improving.</p>
 
-<section class="about">
- <div class="section-label">ABOUT PROPLAYER🫂❤️</div>
- <h2>One Name. One Identity.</h2>
- <p class="subtitle">Welcome to the world of ProPlayer🫂❤️</p>
- <div class="about-box">
-  <strong>ProPlayer🫂❤️</strong> is the identity behind this digital space.
-  Discover projects, explore technology and follow new creations.
-  <br>
-  <strong>Our featured project: MsgTrack</strong>
-  <br>
-  MsgTrack uses Android notification access to save supported
-  notifications from WhatsApp, Telegram and Instagram.
-  Only notifications received while access is enabled can be recorded.
-  Notification removal does not confirm that a sender deleted a message.
-  Media can be added manually by the user.
- </div>
+    <div class="features">
+        <div class="card">
+            <div class="feature-icon">📱</div>
+            <h3>Android Apps</h3>
+            <p>Creating useful mobile application experiences.</p>
+        </div>
+
+        <div class="card">
+            <div class="feature-icon">💻</div>
+            <h3>Development</h3>
+            <p>Exploring code, design and new technology.</p>
+        </div>
+
+        <div class="card">
+            <div class="feature-icon">🚀</div>
+            <h3>Future Projects</h3>
+            <p>New ideas, experiments and creative projects.</p>
+        </div>
+    </div>
 </section>
 
-<section id="download">
- <div class="download-box">
-  <div class="section-label">PROPLAYER🫂❤️ PRESENTS</div>
-  <h2>Download MsgTrack</h2>
-  <p class="subtitle">
-   Your notification organizer for Android.
-  </p>
-  <div class="version">LATEST RELEASE • VERSION 2.3</div>
-  <br>
-  <a class="btn"
-     href="https://drive.google.com/uc?export=download&id=1sKNyXl17vt7Y2AFF7Jg2n0Wrbr17aYba"
-     target="_blank"
-     rel="noopener">
-     ⬇ Download MsgTrack APK
-  </a>
-  <p class="subtitle" style="margin:22px 0 0;font-size:12px">
-   Android APK • Notification access required.
-   Review app permissions before installing.
-  </p>
- </div>
-</section>
-
-<section class="instagram" id="contact">
- <div class="section-label">CONNECT WITH PROPLAYER🫂❤️</div>
- <h2>Let's Connect</h2>
- <p class="subtitle">
-  Follow the official Instagram profile.
- </p>
-
- <div class="insta-box">
-  <div class="icon">📸</div>
-  <div class="insta-name">@rahul_junawa.0021</div>
-  <p style="color:#bcb0ca">
-   Instagram • ProPlayer🫂❤️
-  </p>
-  <a class="btn"
-     href="https://www.instagram.com/rahul_junawa.0021/"
-     target="_blank"
-     rel="noopener">
-     Visit Instagram ↗
-  </a>
- </div>
+<section id="about">
+    <h2 class="section-title">ABOUT <span>ME</span></h2>
+    <div class="card about">
+        <p>
+            Every big journey starts with a small step.
+            Building and learning with passion,
+            one project at a time.
+            <br><br>
+            No limits to imagination.
+            Only new things to create.
+        </p>
+        <div class="special">1215 🧿🤍</div>
+    </div>
 </section>
 
 </main>
 
 <footer>
- <strong>ProPlayer🫂❤️</strong>
- <p>Official Digital Space</p>
- <p>Made with care by ProPlayer🫂❤️</p>
- <p>© 2026 ProPlayer🫂❤️. All rights reserved.</p>
+    <h2>Pro Player ❤️🫂</h2>
+    <p>Official Website · Developer Projects</p>
+    <p>
+        Instagram:
+        <a href="https://instagram.com/rahul_junawa.0021"
+           target="_blank" rel="noopener">
+           @rahul_junawa.0021
+        </a>
+    </p>
+    <div class="footer-mark">1215 🧿🤍</div>
+    <p style="margin-top:18px">© 2026 Pro Player. All rights reserved.</p>
 </footer>
 
 </body>
-</html>
+ </html>
+ 
