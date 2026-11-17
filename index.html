@@ -4,8 +4,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#050907">
-<title>Pro Player ❤️🫂 | Official Website</title>
+<meta name="theme-color" content="#100719">
+<title>ProPlayer💗 | Babe🧿</title>
 
 <style>
 * {
@@ -15,10 +15,16 @@
 }
 
 :root {
-    --green: #00e69a;
-    --white: #f5fff9;
-    --muted: #a0b5a9;
-    --bg: #050907;
+    --pink: #ff75c8;
+    --light-pink: #ffc5ed;
+    --purple: #a855f7;
+    --white: #fff5fc;
+    --muted: #c2aabe;
+    --bg: #0b0612;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -29,7 +35,7 @@ body {
     overflow-x: hidden;
 }
 
-/* FULL SCREEN BACKGROUND NAME */
+/* BACKGROUND */
 
 .background-wallpaper {
     position: fixed;
@@ -38,22 +44,22 @@ body {
     overflow: hidden;
     pointer-events: none;
     background:
-      radial-gradient(ellipse at 50% 40%,
-      rgba(0, 230, 154, 0.13), transparent 65%),
-      #050907;
+      radial-gradient(ellipse at 20% 20%, #54175d55, transparent 55%),
+      radial-gradient(ellipse at 80% 65%, #9e287a25, transparent 50%),
+      linear-gradient(145deg, #090510, #17091e, #08040f);
 }
 
 .big-name {
     position: absolute;
-    top: 50%;
+    top: 48%;
     left: 50%;
     transform: translate(-50%, -50%) rotate(-12deg);
     white-space: nowrap;
-    font-size: clamp(65px, 15vw, 190px);
+    font-size: clamp(60px, 14vw, 170px);
     font-weight: 1000;
+    color: rgba(255,117,200,.045);
     letter-spacing: -5px;
-    color: rgba(0, 230, 154, 0.055);
-    text-shadow: 0 0 55px rgba(0, 230, 154, 0.08);
+    text-shadow: 0 0 50px #ff75c822;
 }
 
 .small-names {
@@ -62,158 +68,266 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    gap: 50px;
     transform: rotate(-18deg);
-    opacity: 0.11;
-    gap: 55px;
+    opacity: .10;
 }
 
 .small-names span {
     white-space: nowrap;
     font-size: 17px;
-    font-weight: 800;
+    font-weight: 900;
     letter-spacing: 5px;
-    color: #dffff0;
-    animation: glow 4s ease-in-out infinite alternate;
+    color: #ffd7f1;
+    animation: glow 4s infinite alternate;
 }
 
 @keyframes glow {
-    from { opacity: .25; }
-    to { opacity: .9; }
+    from { opacity: .3; }
+    to { opacity: 1; }
 }
 
-.background-wallpaper::after {
-    content: "";
-    position: absolute;
+/* STARS */
+
+#stars {
+    position: fixed;
     inset: 0;
-    background:
-      linear-gradient(180deg,
-      rgba(5,9,7,.25),
-      rgba(5,9,7,.65));
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 0 8px 2px #ffb9e8;
+    animation: twinkle var(--duration) ease-in-out infinite alternate;
+}
+
+@keyframes twinkle {
+    from { opacity: .15; transform: scale(.6); }
+    to { opacity: 1; transform: scale(1.6); }
+}
+
+/* FLOATING HEARTS */
+
+.floating-hearts {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.heart {
+    position: absolute;
+    bottom: -40px;
+    color: #ff79c9;
+    font-size: 18px;
+    opacity: 0;
+    filter: drop-shadow(0 0 7px #ff62b8);
+    animation: floatHeart var(--duration) linear infinite;
+}
+
+@keyframes floatHeart {
+    0% {
+        transform: translateY(0) rotate(0deg) scale(.7);
+        opacity: 0;
+    }
+    15% { opacity: .7; }
+    85% { opacity: .5; }
+    100% {
+        transform: translateY(-110vh) rotate(40deg) scale(1.4);
+        opacity: 0;
+    }
+}
+
+/* EMOJI LOOK */
+
+.emoji {
+    display: inline-block;
+    filter: drop-shadow(0 3px 4px #ff78c866);
+    text-shadow: 0 3px 5px #ff75c855;
 }
 
 /* HEADER */
 
 header {
     position: relative;
-    z-index: 2;
-    padding: 22px 7%;
+    z-index: 5;
+    padding: 20px 7%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid rgba(0,230,154,.15);
-    background: rgba(5,9,7,.55);
-    backdrop-filter: blur(16px);
+    border-bottom: 1px solid #ff75c825;
+    background: rgba(12,5,20,.72);
+    backdrop-filter: blur(18px);
 }
 
 .logo {
-    color: var(--white);
     font-size: 23px;
     font-weight: 950;
+    color: white;
 }
 
 .logo span {
-    color: var(--green);
+    color: var(--pink);
 }
 
 nav a {
     color: var(--muted);
     text-decoration: none;
-    margin-left: 22px;
-    font-size: 13px;
-    font-weight: 700;
+    margin-left: 20px;
+    font-size: 12px;
+    font-weight: 800;
+    transition: .3s;
 }
 
 nav a:hover {
-    color: var(--green);
+    color: var(--pink);
+}
+
+/* TOP MESSAGE */
+
+.top-message {
+    position: relative;
+    z-index: 2;
+    padding: 13px 15px;
+    text-align: center;
+    background: #ff75c80c;
+    border-bottom: 1px solid #ff75c825;
+}
+
+.top-message p {
+    font-size: clamp(10px, 2.5vw, 13px);
+    color: #ffd1ec;
+    font-weight: 650;
+    letter-spacing: .2px;
 }
 
 /* HERO */
 
 .hero {
-    min-height: 78vh;
-    padding: 100px 20px 70px;
+    min-height: 82vh;
+    padding: 75px 20px;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     text-align: center;
     position: relative;
+    z-index: 2;
 }
 
 .tag {
-    padding: 9px 18px;
-    border: 1px solid rgba(0,230,154,.35);
+    padding: 9px 19px;
+    border: 1px solid #ff75c85c;
     border-radius: 50px;
-    color: var(--green);
-    background: rgba(0,230,154,.07);
-    font-size: 12px;
-    letter-spacing: 3px;
-    margin-bottom: 27px;
+    color: var(--light-pink);
+    background: #ff75c815;
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-bottom: 28px;
+    box-shadow: 0 0 20px #ff75c817;
 }
 
 .hero h1 {
-    font-size: clamp(42px, 9vw, 90px);
+    font-size: clamp(42px, 10vw, 85px);
     font-weight: 1000;
-    line-height: 1.1;
+    line-height: 1.12;
     letter-spacing: -3px;
+    text-shadow: 0 0 35px #ff75c82b;
 }
 
 .hero h1 span {
-    color: var(--green);
-    text-shadow: 0 0 35px rgba(0,230,154,.35);
+    background: linear-gradient(90deg,#ff91d7,#c084fc,#ffb6e6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
 .hero p {
+    max-width: 530px;
     color: var(--muted);
-    font-size: 16px;
-    line-height: 1.8;
-    margin-top: 22px;
-    max-width: 550px;
+    font-size: 15px;
+    line-height: 1.9;
+    margin-top: 20px;
 }
 
 .special {
-    margin-top: 28px;
-    font-size: 24px;
-    font-weight: 900;
-    letter-spacing: 4px;
-    color: #fff;
-    text-shadow: 0 0 25px rgba(0,230,154,.35);
+    margin-top: 27px;
+    font-size: 23px;
+    font-weight: 950;
+    letter-spacing: 3px;
+    color: var(--light-pink);
+    text-shadow: 0 0 20px #ff75c866;
 }
 
 .special span {
-    color: var(--green);
+    color: var(--pink);
+}
+
+.love-names {
+    margin-top: 27px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.love-names span {
+    padding: 10px 16px;
+    border: 1px solid #ff83ce50;
+    background: #ff75c815;
+    border-radius: 30px;
+    color: #ffd4ed;
+    font-size: 13px;
+    font-weight: 800;
+    box-shadow: 0 0 15px #ff75c815;
+    transition: .3s;
+}
+
+.love-names span:hover {
+    background: #ff75c82c;
+    transform: translateY(-4px);
 }
 
 .hero-buttons {
     display: flex;
-    gap: 14px;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 35px;
+    gap: 14px;
+    margin-top: 32px;
 }
 
 .btn {
+    display: inline-block;
     text-decoration: none;
-    padding: 15px 27px;
-    border-radius: 12px;
+    padding: 15px 26px;
+    border-radius: 13px;
     font-weight: 850;
+    font-size: 13px;
     transition: .3s;
 }
 
 .primary {
-    background: var(--green);
-    color: #03140d;
-    box-shadow: 0 0 25px rgba(0,230,154,.2);
+    background: linear-gradient(120deg,#ff73c7,#c084fc);
+    color: #240b20;
+    box-shadow: 0 0 22px #ff75c849;
 }
 
 .secondary {
-    border: 1px solid rgba(255,255,255,.2);
     color: white;
-    background: rgba(255,255,255,.04);
+    border: 1px solid #ff9cdb75;
+    background: #ffffff09;
 }
 
 .btn:hover {
     transform: translateY(-5px);
+    box-shadow: 0 0 28px #ff75c866;
 }
 
 /* SECTIONS */
@@ -221,39 +335,42 @@ nav a:hover {
 section {
     padding: 75px 7%;
     position: relative;
+    z-index: 2;
 }
 
 .section-title {
     text-align: center;
-    font-size: 35px;
+    font-size: 34px;
     font-weight: 950;
     margin-bottom: 12px;
 }
 
 .section-title span {
-    color: var(--green);
+    color: var(--pink);
+    text-shadow: 0 0 20px #ff75c855;
 }
 
 .section-subtitle {
     text-align: center;
     color: var(--muted);
+    font-size: 13px;
     margin-bottom: 38px;
-    font-size: 14px;
 }
 
 .card {
-    background: rgba(12,24,18,.75);
-    border: 1px solid rgba(0,230,154,.18);
-    border-radius: 22px;
+    background: linear-gradient(145deg,#201029d9,#12091be8);
+    border: 1px solid #ff75c82d;
+    border-radius: 23px;
     padding: 30px;
     backdrop-filter: blur(16px);
-    box-shadow: 0 15px 55px rgba(0,0,0,.25);
+    box-shadow: 0 15px 55px #00000055;
     transition: .3s;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    border-color: rgba(0,230,154,.5);
+    border-color: #ff75c88a;
+    box-shadow: 0 15px 40px #ff75c81c;
 }
 
 .features {
@@ -263,7 +380,7 @@ section {
 }
 
 .feature-icon {
-    font-size: 30px;
+    font-size: 34px;
     margin-bottom: 17px;
 }
 
@@ -275,7 +392,7 @@ section {
 .card p {
     color: var(--muted);
     font-size: 14px;
-    line-height: 1.7;
+    line-height: 1.8;
 }
 
 /* APP */
@@ -292,16 +409,16 @@ section {
     object-fit: contain;
     border-radius: 22px;
     margin-bottom: 20px;
-    background: rgba(0,230,154,.08);
+    background: #ff75c81c;
 }
 
 .app-card h3 {
     font-size: 32px;
-    color: var(--green);
+    color: var(--pink);
+    text-shadow: 0 0 20px #ff75c844;
 }
 
 .app-card .btn {
-    display: inline-block;
     margin-top: 25px;
 }
 
@@ -315,22 +432,44 @@ section {
 
 .about p {
     color: var(--muted);
-    font-size: 16px;
+    font-size: 15px;
+    line-height: 2;
+}
+
+/* LOVE CARD */
+
+.love-card {
+    max-width: 650px;
+    margin: 30px auto 0;
+    text-align: center;
+}
+
+.love-card h3 {
+    color: var(--light-pink);
+    font-size: 25px;
+    margin-bottom: 17px;
+}
+
+.love-card p {
+    font-size: 15px;
     line-height: 2;
 }
 
 /* FOOTER */
 
 footer {
+    position: relative;
+    z-index: 2;
     padding: 35px 15px;
     text-align: center;
-    background: rgba(0,0,0,.4);
-    border-top: 1px solid rgba(0,230,154,.15);
+    background: #08040fbb;
+    border-top: 1px solid #ff75c82c;
 }
 
 footer h2 {
     font-size: 24px;
     margin-bottom: 12px;
+    color: var(--light-pink);
 }
 
 footer p {
@@ -340,38 +479,77 @@ footer p {
 }
 
 footer a {
-    color: var(--green);
+    color: var(--pink);
     text-decoration: none;
 }
 
 .footer-mark {
     margin-top: 16px;
     font-size: 20px;
-    font-weight: 900;
+    font-weight: 950;
     letter-spacing: 3px;
+    color: var(--light-pink);
 }
+
+/* MOBILE */
 
 @media(max-width:600px) {
     header {
-        padding: 18px 5%;
+        padding: 17px 5%;
+    }
+
+    .logo {
+        font-size: 19px;
     }
 
     nav a {
         margin-left: 9px;
-        font-size: 11px;
+        font-size: 10px;
     }
 
     .hero {
         min-height: 75vh;
-        padding-top: 80px;
+        padding: 65px 17px;
+    }
+
+    .hero h1 {
+        letter-spacing: -2px;
     }
 
     section {
         padding: 60px 5%;
     }
 
+    .card {
+        padding: 23px;
+    }
+
+    .section-title {
+        font-size: 29px;
+    }
+
     .big-name {
-        font-size: 70px;
+        font-size: 65px;
+    }
+
+    .love-names {
+        gap: 7px;
+    }
+
+    .love-names span {
+        font-size: 11px;
+        padding: 9px 12px;
+    }
+}
+
+/* ACCESSIBILITY */
+
+@media(prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
     }
 }
 </style>
@@ -380,20 +558,32 @@ footer a {
 <body>
 
 <div class="background-wallpaper">
-    <div class="big-name">pro player ❤️🫂</div>
+    <div class="big-name">ProPlayer💗</div>
 
     <div class="small-names">
-        <span>pro player ❤️🫂 · 1215🧿🤍 · pro player ❤️🫂</span>
-        <span>1215🧿🤍 · pro player ❤️🫂 · 1215🧿🤍</span>
-        <span>pro player ❤️🫂 · pro player ❤️🫂</span>
-        <span>1215🧿🤍 · pro player ❤️🫂 · 1215🧿🤍</span>
-        <span>pro player ❤️🫂 · 1215🧿🤍 · pro player ❤️🫂</span>
-        <span>1215🧿🤍 · pro player ❤️🫂</span>
+        <span>ProPlayer💗 · Babe🧿 · 1215🧿🤍</span>
+        <span>Bacha 🫂🧿 · ProPlayer💗 · Babe🧿</span>
+        <span>1215🧿🤍 · Bacha 🫂🧿 · ProPlayer💗</span>
+        <span>Babe🧿 · 1215🧿🤍 · ProPlayer💗</span>
+        <span>ProPlayer💗 · Bacha 🫂🧿 · Babe🧿</span>
     </div>
 </div>
 
+<div id="stars"></div>
+<div class="floating-hearts" id="hearts"></div>
+
+<!-- TOP MESSAGE -->
+
+<div class="top-message">
+    <p>जो APK डाउनलोड करने आए हैं, वो वापस चले जाओ,
+    मैं तो अपने बच्चे को मना रहा हूँ 😌👉🏻👈🏻❤️</p>
+</div>
+
+<!-- HEADER -->
+
 <header>
-    <div class="logo">Pro Player <span>❤️🫂</span></div>
+    <div class="logo">ProPlayer <span>💗</span></div>
+
     <nav>
         <a href="#home">HOME</a>
         <a href="#apps">APPS</a>
@@ -403,45 +593,62 @@ footer a {
 
 <main>
 
+<!-- WELCOME -->
+
 <div class="hero" id="home">
-    <div class="tag">OFFICIAL DEVELOPER WEBSITE</div>
+
+    <div class="tag">A LITTLE WORLD FULL OF LOVE ✨</div>
 
     <h1>
-        PRO PLAYER<br>
-        <span>❤️🫂</span>
+        ProPlayer<br>
+        <span>💗</span>
     </h1>
 
     <p>
-        Turning ideas into reality.
-        Building apps, exploring technology
-        and creating something different.
+        Welcome to my little world.
+        A place where technology meets love
+        and every little moment becomes special.
     </p>
 
+    <div class="love-names">
+        <span>Babe🧿</span>
+        <span>1215🧿🤍</span>
+        <span>Bacha 🫂🧿</span>
+    </div>
+
     <div class="special">
-        1215 <span>🧿🤍</span>
+        Made with <span>Love ❤️</span>
     </div>
 
     <div class="hero-buttons">
         <a href="#apps" class="btn primary">EXPLORE APPS ↗</a>
+
         <a href="https://instagram.com/rahul_junawa.0021"
            target="_blank" rel="noopener"
            class="btn secondary">INSTAGRAM ↗</a>
     </div>
+
 </div>
 
+<!-- APPS -->
+
 <section id="apps">
+
     <h2 class="section-title">MY <span>PROJECTS</span></h2>
+
     <p class="section-subtitle">
         Ideas are just the beginning.
     </p>
 
     <div class="card app-card">
+
         <img class="app-logo"
              src="msgtrack_logo.png"
              alt="MsgTrack logo"
              onerror="this.style.display='none'">
 
         <h3>MsgTrack</h3>
+
         <p>
             A notification history companion
             designed to help users manage their
@@ -458,14 +665,23 @@ footer a {
             Install only after reviewing the app's permissions
             and Android security warnings.
         </p>
+
     </div>
+
 </section>
 
+<!-- FEATURES -->
+
 <section>
+
     <h2 class="section-title">WHAT I <span>BUILD</span></h2>
-    <p class="section-subtitle">Learning. Creating. Improving.</p>
+
+    <p class="section-subtitle">
+        Learning. Creating. Improving.
+    </p>
 
     <div class="features">
+
         <div class="card">
             <div class="feature-icon">📱</div>
             <h3>Android Apps</h3>
@@ -483,29 +699,68 @@ footer a {
             <h3>Future Projects</h3>
             <p>New ideas, experiments and creative projects.</p>
         </div>
+
     </div>
+
 </section>
 
+<!-- ABOUT -->
+
 <section id="about">
+
     <h2 class="section-title">ABOUT <span>ME</span></h2>
+
     <div class="card about">
+
         <p>
             Every big journey starts with a small step.
             Building and learning with passion,
             one project at a time.
+
             <br><br>
+
             No limits to imagination.
             Only new things to create.
         </p>
-        <div class="special">1215 🧿🤍</div>
+
+        <div class="special">
+            1215 <span>🧿🤍</span>
+        </div>
+
     </div>
+
+    <div class="card love-card">
+
+        <h3>Babe 🧿💗</h3>
+
+        <p>
+            This little corner of the internet
+            has a special place for you.
+
+            <br><br>
+
+            Bacha, you make this little world
+            more beautiful. 🫂❤️
+        </p>
+
+        <div class="special">
+            Bacha <span>🫂🧿</span>
+        </div>
+
+    </div>
+
 </section>
 
 </main>
 
+<!-- FOOTER -->
+
 <footer>
-    <h2>Pro Player ❤️🫂</h2>
+
+    <h2>ProPlayer 💗</h2>
+
     <p>Official Website · Developer Projects</p>
+
     <p>
         Instagram:
         <a href="https://instagram.com/rahul_junawa.0021"
@@ -513,10 +768,67 @@ footer a {
            @rahul_junawa.0021
         </a>
     </p>
-    <div class="footer-mark">1215 🧿🤍</div>
-    <p style="margin-top:18px">© 2026 Pro Player. All rights reserved.</p>
+
+    <div class="footer-mark">
+        Babe🧿 · 1215🧿🤍
+    </div>
+
+    <p style="margin-top:12px">
+        Made with Love ❤️
+    </p>
+
+    <p style="margin-top:18px">
+        © 2026 ProPlayer. All rights reserved.
+    </p>
+
 </footer>
 
+<!-- ANIMATIONS -->
+
+<script>
+
+// GLOWING STARS
+
+const starBox = document.getElementById("stars");
+
+for (let i = 0; i < 65; i++) {
+    const star = document.createElement("span");
+
+    star.className = "star";
+    star.style.left = Math.random() * 100 + "%";
+    star.style.top = Math.random() * 100 + "%";
+    star.style.setProperty(
+        "--duration",
+        (2 + Math.random() * 4) + "s"
+    );
+    star.style.animationDelay = Math.random() * 4 + "s";
+
+    starBox.appendChild(star);
+}
+
+// FLOATING HEARTS
+
+const heartBox = document.getElementById("hearts");
+const heartSymbols = ["❤️", "💗", "💕", "🤍"];
+
+for (let i = 0; i < 15; i++) {
+    const heart = document.createElement("span");
+
+    heart.className = "heart";
+    heart.textContent =
+        heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
+
+    heart.style.left = Math.random() * 100 + "%";
+    heart.style.setProperty(
+        "--duration",
+        (9 + Math.random() * 9) + "s"
+    );
+    heart.style.animationDelay = Math.random() * 15 + "s";
+
+    heartBox.appendChild(heart);
+}
+
+</script>
+
 </body>
- </html>
- 
+</html>
